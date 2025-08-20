@@ -26,7 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userName !== '') {
             nameScreen.classList.add('hidden');
             gameScreen.classList.remove('hidden');
-            backgroundSong.play();
+            backgroundSong.play().catch(error => {
+    // This part handles the error if the browser blocks autoplay.
+    // It will log the error to the console.
+    console.log("Autoplay was prevented. User will need to interact to play audio.", error);
+});
+            
             createBalloons();
         } else {
             alert('Please enter your name!');
