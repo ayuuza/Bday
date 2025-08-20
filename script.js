@@ -26,12 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userName !== '') {
             nameScreen.classList.add('hidden');
             gameScreen.classList.remove('hidden');
-            backgroundSong.play().catch(error => {
-    // This part handles the error if the browser blocks autoplay.
-    // It will log the error to the console.
-    console.log("Autoplay was prevented. User will need to interact to play audio.", error);
-});
             
+            // Attempt to play the audio
+            const playPromise = backgroundSong.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay was prevented. Please check browser settings or user interaction.", error);
+                });
+            }
+
             createBalloons();
         } else {
             alert('Please enter your name!');
@@ -43,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const balloon = document.createElement('div');
             balloon.classList.add('balloon');
             balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 70%)`;
-            balloon.style.left = `${Math.random() * 80 + 10}vw`; // Random horizontal position
+            balloon.style.left = `${Math.random() * 80 + 10}vw`;
+            balloon.style.top = `${Math.random() * 70 + 15}vh`; 
             balloon.addEventListener('click', popBalloon);
             balloonContainer.appendChild(balloon);
         }
@@ -69,4 +73,3 @@ document.addEventListener('DOMContentLoaded', () => {
         birthdayPoem.textContent = poems[Math.floor(Math.random() * poems.length)];
     });
 });
-      
