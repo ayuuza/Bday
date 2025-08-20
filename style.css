@@ -1,10 +1,14 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: #FF69B4; /* Hot Pink */
-    color: white;
+    background: #FFF0F5; /* A very light pink/white */
+    color: #4B0082; /* Dark purple for text */
     text-align: center;
     overflow: hidden;
+    background-image: url('stars.png'), url('cake.png');
+    background-position: top left, bottom center;
+    background-repeat: repeat, no-repeat;
+    background-size: 100px 100px, 300px;
 }
 
 .screen {
@@ -16,7 +20,7 @@ body {
     padding: 20px;
     box-sizing: border-box;
     position: relative;
-    z-index: 2; /* To ensure content is above the background */
+    z-index: 2;
 }
 
 .hidden {
@@ -33,12 +37,12 @@ input, textarea, button {
 }
 
 input, textarea {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
+    background-color: rgba(75, 0, 130, 0.2);
+    color: #4B0082;
 }
 
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #FF1493; /* Bright pink */
     color: white;
     cursor: pointer;
     transition: transform 0.2s;
@@ -48,9 +52,8 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Balloon Game Styling */
 #balloon-container {
-    position: absolute; /* This is crucial for the absolute position of balloons */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
@@ -61,11 +64,11 @@ button:hover {
 .balloon {
     width: 80px;
     height: 100px;
-    background-color: #FFC0CB; /* Pink */
+    background-color: #FFC0CB;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     cursor: pointer;
     box-shadow: inset -5px -5px 5px rgba(0,0,0,0.2);
-    position: absolute; /* Changed to absolute position */
+    position: absolute;
     animation: bounce 2s infinite ease-in-out;
     transition: transform 0.1s;
 }
@@ -78,7 +81,7 @@ button:hover {
     transform: translateX(-50%);
     width: 2px;
     height: 20px;
-    background-color: white;
+    background-color: #4B0082;
 }
 
 .popped {
@@ -87,7 +90,6 @@ button:hover {
     transition: opacity 0.5s, transform 0.5s;
 }
 
-/* Sparkle Effect */
 .sparkles {
     position: absolute;
     top: 0;
@@ -95,7 +97,7 @@ button:hover {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background: radial-gradient(circle, transparent 20%, #FFF 80%), radial-gradient(circle, transparent 20%, #FFF 80%);
+    background: radial-gradient(circle, transparent 20%, #FFD700 80%), radial-gradient(circle, transparent 20%, #FFD700 80%);
     background-size: 2px 2px;
     animation: sparkle-move 10s infinite;
 }
@@ -115,5 +117,4 @@ button:hover {
     margin-top: 30px;
     max-width: 600px;
     line-height: 1.6;
-        }
-        
+}
