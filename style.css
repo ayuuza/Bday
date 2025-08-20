@@ -1,8 +1,8 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: #FFF0F5; /* A very light pink/white */
-    color: #4B0082; /* Dark purple for text */
+    background: #FFF0F5;
+    color: #4B0082;
     text-align: center;
     overflow: hidden;
     background-image: url('stars.png'), url('cake.png');
@@ -42,7 +42,7 @@ input, textarea {
 }
 
 button {
-    background-color: #FF1493; /* Bright pink */
+    background-color: #FF1493;
     color: white;
     cursor: pointer;
     transition: transform 0.2s;
@@ -90,6 +90,8 @@ button:hover {
     transition: opacity 0.5s, transform 0.5s;
 }
 
+/* This section is removed to get rid of the twinkling effect */
+/*
 .sparkles {
     position: absolute;
     top: 0;
@@ -106,6 +108,7 @@ button:hover {
     from { background-position: 0 0; }
     to { background-position: 100px 100px; }
 }
+*/
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
@@ -125,5 +128,4 @@ button:hover {
     border-radius: 50%;
     margin-bottom: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    }
-    
+}
