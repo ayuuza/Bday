@@ -5,19 +5,18 @@ body {
     color: white;
     text-align: center;
     overflow: hidden;
-    position: relative;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="90" font-size="90" fill="rgba(255,255,255,0.1)">🎂</text><text x="70" y="50" font-size="50" fill="rgba(255,255,255,0.1)">🎉</text><text x="10" y="30" font-size="40" fill="rgba(255,255,255,0.1)">🎁</text></svg>');
-    background-size: 150px;
 }
 
 .screen {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
+    position: relative;
+    z-index: 2; /* To ensure content is above the background */
 }
 
 .hidden {
@@ -30,6 +29,7 @@ input, textarea, button {
     font-size: 1.2em;
     border-radius: 5px;
     margin-top: 20px;
+    outline: none;
 }
 
 input, textarea {
@@ -50,13 +50,12 @@ button:hover {
 
 /* Balloon Game Styling */
 #balloon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 800px;
-    margin-top: 20px;
+    position: absolute; /* This is crucial for the absolute position of balloons */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .balloon {
@@ -66,7 +65,7 @@ button:hover {
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     cursor: pointer;
     box-shadow: inset -5px -5px 5px rgba(0,0,0,0.2);
-    position: relative;
+    position: absolute; /* Changed to absolute position */
     animation: bounce 2s infinite ease-in-out;
     transition: transform 0.1s;
 }
@@ -116,5 +115,5 @@ button:hover {
     margin-top: 30px;
     max-width: 600px;
     line-height: 1.6;
-  }
-  
+        }
+        
