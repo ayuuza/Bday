@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Birthday Wish</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="background-song" src="finding-her.mp3" preload="auto"></audio>
+
+    <div id="name-screen" class="screen">
+        <h1>Hello!</h1>
+        <p>Enter your name to begin the celebration.</p>
+        <input type="text" id="userNameInput" placeholder="Your Name">
+        <button id="startButton">Start</button>
+    </div>
+
+    <div id="game-screen" class="screen hidden">
+        <h1>Pop the Balloons!</h1>
+        <p>Pop 8 balloons to continue.</p>
+        <div id="balloon-container"></div>
+    </div>
+
+    <div id="wish-screen" class="screen hidden">
+        <h1>Make a Wish</h1>
+        <p>Type your special wish below.</p>
+        <textarea id="userWish" placeholder="Type your wish here..."></textarea>
+        <button id="sendWishButton">Send Wish</button>
+    </div>
+
+    <div id="final-screen" class="screen hidden">
+        <div class="sparkles"></div>
+        <h1 id="finalGreeting"></h1>
+        <p id="specialMessage">You are a special person and your wish is also special. I'm not a god, but your wish comes true.</p>
+        <p id="birthdayPoem"></p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+          </html>
+  
