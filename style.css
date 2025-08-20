@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #FF69B4; /* Hot Pink */
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="90" font-size="90" fill="rgba(255,255,255,0.1)">🎂</text><text x="70" y="50" font-size="50" fill="rgba(255,255,255,0.1)">🎉</text><text x="10" y="30" font-size="40" fill="rgba(255,255,255,0.1)">🎁</text></svg>');
+    background-size: 150px;
+}
+
+.screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+input, textarea, button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+input, textarea {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Balloon Game Styling */
+#balloon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.balloon {
+    width: 80px;
+    height: 100px;
+    background-color: #FFC0CB; /* Pink */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    cursor: pointer;
+    box-shadow: inset -5px -5px 5px rgba(0,0,0,0.2);
+    position: relative;
+    animation: bounce 2s infinite ease-in-out;
+    transition: transform 0.1s;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: white;
+}
+
+.popped {
+    opacity: 0;
+    transform: scale(1.5);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Sparkle Effect */
+.sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 20%, #FFF 80%), radial-gradient(circle, transparent 20%, #FFF 80%);
+    background-size: 2px 2px;
+    animation: sparkle-move 10s infinite;
+}
+
+@keyframes sparkle-move {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+#birthdayPoem {
+    font-style: italic;
+    margin-top: 30px;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  
