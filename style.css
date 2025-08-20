@@ -118,3 +118,12 @@ button:hover {
     max-width: 600px;
     line-height: 1.6;
 }
+
+#friendBirthdayPhoto {
+    width: 150px; 
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
