@@ -73,4 +73,3 @@ document.addEventListener('DOMContentLoaded', () => {
         birthdayPoem.textContent = poems[Math.floor(Math.random() * poems.length)];
     });
 });
-            
